@@ -95,6 +95,3 @@ Metrik F1-score menjadi penting dalam kasus ini karena menghindari kesalahan mem
 - `kolom_model.pkl`: File penyimpanan kolom untuk transformasi data baru.
 - File `prediksi_interaktif.py`: Berisi antarmuka prediksi berbasis input terminal.
 
-## 📝 Catatan
-
-Dokumen ini ditulis menggunakan format Markdown. Untuk melihat dalam tampilan terbaik, buka di editor Markdown seperti [Dillinger](https://dillinger.io) atau melalui GitHub.
