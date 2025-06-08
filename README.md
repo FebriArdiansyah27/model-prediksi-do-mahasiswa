@@ -98,3 +98,13 @@ Metrik F1-score menjadi penting dalam kasus ini karena menghindari kesalahan mem
 - `model_prediksi_do.pkl`: File model hasil pelatihan.
 - `kolom_model.pkl`: File penyimpanan kolom untuk transformasi data baru.
 
+## 🌐 Akses Dashboard
+
+Kamu dapat mencoba langsung dashboard prediksi risiko DO mahasiswa melalui tautan berikut:
+
+👉 **[Klik untuk membuka Dashboard Streamlit](https://model-prediksi-do-mahasiswa-kelompok-13-4uk7c2sq4hce2nkbwislys.streamlit.app/)**
+
+Dashboard ini memungkinkan pengguna:
+- Melihat data dan statistik deskriptif
+- Melakukan prediksi risiko DO berdasarkan input mahasiswa
+- Menjelajahi visualisasi fitur dan pengaruhnya terhadap prediksi
