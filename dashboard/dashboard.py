@@ -19,7 +19,7 @@ def load_data():
 
 @st.cache_resource
 def load_model():
-    model = joblib.load("model_prediksi_do.pkl")
+    model = joblib.load("dashboard/model_prediksi_do.pkl")
     if isinstance(model, list):
         model = model[0]  # Ambil model dari list jika perlu
     return model
