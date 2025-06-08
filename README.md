@@ -38,7 +38,7 @@ Dataset yang digunakan merupakan data sintetis berjumlah 1500 baris dengan 8–9
 
 **Fitur-fitur dalam dataset (versi terbaru):**
 
-- `IPK` : Nilai Rata-rata IP selama kuliah.
+- `IPK` : Nilai IP dari semester 1 sampai dengan semester 4.
 - `Kehadiran_Rata` : Persentase kehadiran mahasiswa di kelas.
 - `Remedial_Total` : Jumlah mata kuliah yang diulang.
 - `Aktivitas_Online` : Rata-rata jam belajar daring per minggu.
@@ -88,7 +88,7 @@ Model dilatih pada data training sebesar 80% dari total dataset.
 
 ### Hasil Evaluasi:
 
-- **Akurasi Model**: 92.67%
+- **Akurasi Model**: 94.67%
 - Confusion Matrix menunjukkan bahwa model cukup seimbang dalam mengenali mahasiswa yang berisiko maupun aman.
 
 Metrik F1-score menjadi penting dalam kasus ini karena menghindari kesalahan memprediksi mahasiswa berisiko sebagai aman (false negative) sangat penting untuk intervensi dini.
