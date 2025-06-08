@@ -97,5 +97,4 @@ Metrik F1-score menjadi penting dalam kasus ini karena menghindari kesalahan mem
 
 - `model_prediksi_do.pkl`: File model hasil pelatihan.
 - `kolom_model.pkl`: File penyimpanan kolom untuk transformasi data baru.
-- File `prediksi_interaktif.py`: Berisi antarmuka prediksi berbasis input terminal.
 
