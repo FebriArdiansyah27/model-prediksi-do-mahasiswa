@@ -15,7 +15,7 @@ st.set_page_config(page_title="Dashboard Prediksi DO Mahasiswa", layout="wide")
 # -------------------------------
 @st.cache_data
 def load_data():
-    return pd.read_csv('dashboar/dataset_risiko_do_mahasiswa1500.csv')
+    return pd.read_csv('dashboard/dataset_risiko_do_mahasiswa1500.csv')
 
 @st.cache_resource
 def load_model():
