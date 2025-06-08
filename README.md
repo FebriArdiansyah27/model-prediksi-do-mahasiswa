@@ -83,8 +83,7 @@ Model dilatih pada data training sebesar 80% dari total dataset.
 
 ### Hasil Evaluasi:
 
-- **Akurasi Model**: 92.5%
-- **F1-score (DO class)**: 90%
+- **Akurasi Model**: 92.67%
 - Confusion Matrix menunjukkan bahwa model cukup seimbang dalam mengenali mahasiswa yang berisiko maupun aman.
 
 Metrik F1-score menjadi penting dalam kasus ini karena menghindari kesalahan memprediksi mahasiswa berisiko sebagai aman (false negative) sangat penting untuk intervensi dini.
