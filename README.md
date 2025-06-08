@@ -9,10 +9,6 @@ Pendidikan tinggi merupakan salah satu faktor kunci dalam pembangunan sumber day
 
 Dengan model prediksi ini, pihak kampus dapat melakukan intervensi lebih awal terhadap mahasiswa yang teridentifikasi berisiko, sehingga mencegah DO dan meningkatkan kualitas pendidikan.
 
-### Referensi:
-
-- D. T. Larose, *Discovering Knowledge in Data: An Introduction to Data Mining*, Wiley, 2005.
-- M. K. Hasan et al., "Student Dropout Prediction using Machine Learning Techniques," *IEEE Access*, vol. 8, 2020.
 
 ## 💡 Business Understanding
 
