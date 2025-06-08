@@ -1,5 +1,10 @@
 
-# 📘 Laporan Proyek Machine Learning - Prediksi Risiko DO Mahasiswa
+# 📘 Laporan UAS Proyek Machine Learning - Prediksi Risiko DO Mahasiswa
+
+## Anggota Kelompok 13 :
+
+1. M. Febri Ardiansyah (G1A022049)
+2. M. Hafidz Ashshidiqi (G1A022079)
 
 ## 🧭 Domain Proyek
 
