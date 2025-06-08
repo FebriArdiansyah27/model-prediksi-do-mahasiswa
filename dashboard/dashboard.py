@@ -4,7 +4,6 @@ import numpy as np
 import joblib
 import matplotlib.pyplot as plt
 import seaborn as sns
-import os
 
 # -------------------------------
 # KONFIGURASI DASHBOARD
@@ -12,22 +11,17 @@ import os
 st.set_page_config(page_title="Dashboard Prediksi DO Mahasiswa", layout="wide")
 
 # -------------------------------
-# DEBUG: Cek direktori kerja saat ini
-# -------------------------------
-st.write("Current Working Directory:", os.getcwd())
-
-# -------------------------------
 # LOAD DATASET & MODEL
 # -------------------------------
 @st.cache_data
 def load_data():
-    return pd.read_csv('dataset_risiko_do_mahasiswa1500.csv')
+    return pd.read_csv('dashboar/dataset_risiko_do_mahasiswa1500.csv')
 
 @st.cache_resource
 def load_model():
-    model = joblib.load("../model_prediksi_do.pkl")  # relatif dari dalam folder dashboard
+    model = joblib.load("model_prediksi_do.pkl")
     if isinstance(model, list):
-        model = model[0]
+        model = model[0]  # Ambil model dari list jika perlu
     return model
 
 data = load_data()
@@ -42,6 +36,7 @@ ipk_sem2 = st.sidebar.slider("IPK Semester 2", 0.0, 4.0, 3.0, 0.01)
 ipk_sem3 = st.sidebar.slider("IPK Semester 3", 0.0, 4.0, 3.0, 0.01)
 ipk_sem4 = st.sidebar.slider("IPK Semester 4", 0.0, 4.0, 3.0, 0.01)
 
+# Pekerjaan dengan urutan sesuai model
 pekerjaan_options = ['Pekerjaan Penuh Waktu', 'Paruh Waktu', 'Tidak Bekerja']
 pekerjaan = st.sidebar.selectbox("Status Pekerjaan", pekerjaan_options)
 pekerjaan_encoded = pekerjaan_options.index(pekerjaan)
@@ -53,16 +48,17 @@ aktivitas_online = st.sidebar.slider("Aktivitas_Online", 0, 50, 20)
 pendapatan_ortu = st.sidebar.slider("Pendapatan Orang Tua (juta)", 0, 50, 5)
 tanggungan_keluarga = st.sidebar.number_input("Jumlah Tanggungan Keluarga", 0, 10, 2)
 
-input_data = pd.DataFrame([[ipk_sem1, ipk_sem2, ipk_sem3, ipk_sem4,
-                            pekerjaan_encoded, kehadiran, remedial,
-                            jam_kerja, aktivitas_online,
-                            pendapatan_ortu, tanggungan_keluarga]],
-                          columns=[
-                              'IPK_Sem1', 'IPK_Sem2', 'IPK_Sem3', 'IPK_Sem4',
-                              'Pekerjaan', 'Kehadiran_Rata', 'Remedial_Total',
-                              'Jam_Kerja_Mingguan', 'Aktivitas_Online',
-                              'Pendapatan_OrangTua', 'Tanggungan_Keluarga'
-                          ])
+# Susun input sesuai dengan urutan fitur saat training
+input_data = pd.DataFrame([[
+    ipk_sem1, ipk_sem2, ipk_sem3, ipk_sem4,
+    pekerjaan_encoded, kehadiran, remedial,
+    jam_kerja, aktivitas_online, pendapatan_ortu, tanggungan_keluarga
+]], columns=[
+    'IPK_Sem1', 'IPK_Sem2', 'IPK_Sem3', 'IPK_Sem4',
+    'Pekerjaan', 'Kehadiran_Rata', 'Remedial_Total',
+    'Jam_Kerja_Mingguan', 'Aktivitas_Online',
+    'Pendapatan_OrangTua', 'Tanggungan_Keluarga'
+])
 
 # -------------------------------
 # HEADER & TABS
@@ -94,6 +90,7 @@ with tab2:
     
     if st.button("Prediksi Risiko DO"):
         try:
+            # Gunakan input_data.values agar tidak error nama kolom
             pred = model.predict(input_data.values)[0]
             prob = model.predict_proba(input_data.values)[0][1]
             
@@ -106,6 +103,7 @@ with tab2:
             st.dataframe(input_data)
         except Exception as e:
             st.error(f"Terjadi kesalahan saat prediksi: {e}")
+
 
 # -------------------------------
 # TAB 3: VISUALISASI
