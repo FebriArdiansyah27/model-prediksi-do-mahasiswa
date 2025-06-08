@@ -29,11 +29,11 @@ Dengan model prediksi ini, pihak kampus dapat melakukan intervensi lebih awal te
 
 ## 📊 Data Understanding
 
-Dataset yang digunakan merupakan data sintetis berjumlah 3000 baris dengan 8–9 fitur, yang mencerminkan kondisi akademik, aktivitas, serta kondisi sosial ekonomi mahasiswa.
+Dataset yang digunakan merupakan data sintetis berjumlah 1500 baris dengan 8–9 fitur, yang mencerminkan kondisi akademik, aktivitas, serta kondisi sosial ekonomi mahasiswa.
 
 **Fitur-fitur dalam dataset (versi terbaru):**
 
-- `IPK` : Rata-rata IPK dari semester 1–4.
+- `IPK` : Nilai Rata-rata IP selama kuliah.
 - `Kehadiran_Rata` : Persentase kehadiran mahasiswa di kelas.
 - `Remedial_Total` : Jumlah mata kuliah yang diulang.
 - `Aktivitas_Online` : Rata-rata jam belajar daring per minggu.
